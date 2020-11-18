@@ -1,0 +1,26 @@
+// DEBUGGER
+* {
+    border: .5px solid red;
+}
+
+h1, h2 {
+    font-family: 'Rubik', sans-serif;
+}
+
+body, textarea, button {
+    font-family: 'Karla', sans-serif;
+}
+
+fieldset {
+    border: 0;
+}
+
+textarea {
+    display: block;
+}
+
+.wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+    width: 95%;
+}

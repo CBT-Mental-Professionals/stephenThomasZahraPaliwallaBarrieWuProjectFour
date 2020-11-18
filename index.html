@@ -5,48 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project4</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header>
-        <h1>CBT</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt possimus vel voluptatem provident sed distinctio nam exercitationem neque aut sequi quis asperiores dolores assumenda eius enim temporibus quas sit minima hic facere doloribus, beatae deserunt omnis. Laborum, natus est atque deleniti corporis aperiam? Ullam, quas esse! Repellat atque nesciunt corporis?</p>
+        <div class="wrapper headerText">
+            <h1>FEEL FUCKING GOOD</h1>
+            <p>I know you don’t give a fuck about yourself but if you can think about the people around you for once in your fucking
+            life and try to do the absolute bare minimum for your mental health for their sake if not for your own disgusting stupid
+            self then maybe you wouldn’t be so fucking sad all the time!!! Let’s go bitch!!</p>
+        </div>
     </header>
     <main>
-        <h2>Some title</h2>
-        <p>some instructions</p>
-        <form action="">
-            <fieldset class="question question1">
-                <legend>This is question 1</legend>
-                <label for="answer1">Option One</label>
-                <input type="radio" name="questionOneAnswer" value="option1" id="option1">
-                <label for="answer2">Option Two</label>
-                <input type="radio" name="questionOneAnswer" value="option2" id="option2">
-                <label for="answer3">Option Three</label>
-                <input type="radio" name="questionOneAnswer" value="option3" id="option3">
-            </fieldset>
-            <fieldset class="question question1">
-                <legend>This is question 2</legend>
-                <label for="answer1">Option One</label>
-                <input type="radio" name="questionOneAnswer" value="option1" id="option1">
-                <label for="answer2">Option Two</label>
-                <input type="radio" name="questionOneAnswer" value="option2" id="option2">
-                <label for="answer3">Option Three</label>
-                <input type="radio" name="questionOneAnswer" value="option3" id="option3">
-            </fieldset>
-            <fieldset class="question question1">
-                <legend>This is question 3</legend>
-                <label for="answer1">Option One</label>
-                <input type="radio" name="questionOneAnswer" value="option1" id="option1">
-                <label for="answer2">Option Two</label>
-                <input type="radio" name="questionOneAnswer" value="option2" id="option2">
-                <label for="answer3">Option Three</label>
-                <input type="radio" name="questionOneAnswer" value="option3" id="option3">
-            </fieldset>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <button type="submit">Feelin goooood</button>
-        </form>
-        <div class="moodMeter"></div>
+        <div class="wrapper">
+            <form action="">
+                <section class="questionSection questionSection1">
+                    <h2>HOW THE FUCK?</h2>
+                    <p>Answer some questions</p>
+                    <fieldset class="question question1">
+                        <legend>How many hours of sleep did you get?</legend>
+                        <label for="answer1">0-3</label>
+                        <input type="radio" name="questionOneAnswer" value="option1" id="option1">
+                        <label for="answer2">3-6</label>
+                        <input type="radio" name="questionOneAnswer" value="option2" id="option2">
+                        <label for="answer3">6-9</label>
+                        <input type="radio" name="questionOneAnswer" value="option3" id="option3">
+                    </fieldset>
+                </section>
+                <section class="questionSection questionSection2">
+                    <fieldset class="question question2">
+                        <legend>How many meals have you had today?</legend>
+                        <label for="answer1">One</label>
+                        <input type="radio" name="questionTwoAnswer" value="option1" id="option1">
+                        <label for="answer2">Two</label>
+                        <input type="radio" name="questionTwoAnswer" value="option2" id="option2">
+                        <label for="answer3">Three</label>
+                        <input type="radio" name="questionTwoAnswer" value="option3" id="option3">
+                    </fieldset>
+                </section>
+                <section class="questionSection questionSection3">
+                    <fieldset class="question question3">
+                        <legend>Have you been active today?</legend>
+                        <label for="answer1">Yes</label>
+                        <input type="radio" name="questionThreeAnswer" value="option1" id="option1">
+                        <label for="answer2">No</label>
+                        <input type="radio" name="questionThreeAnswer" value="option2" id="option2">
+                    </fieldset>
+                </section>
+                <label for="additionalComments">Tell us about one success and one challenge that you faced.</label>
+                <textarea name="additionalComments" id="" cols="30" rows="10" placeholder="additional comments for your day"></textarea>
+                <button type="submit">Feelin goooood</button>
+            </form>
+        </div>
     </main>
     <footer>
 
