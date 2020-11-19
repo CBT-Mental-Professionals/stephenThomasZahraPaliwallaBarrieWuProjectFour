@@ -235,10 +235,6 @@ html {
   overflow: hidden;
 }
 
-* {
-  border: .5px solid red;
-}
-
 h1, h2 {
   font-family: 'Rubik', sans-serif;
 }
@@ -272,7 +268,7 @@ header .headerText {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50vh;
+  height: 40vh;
 }
 
 header .headerText h1 {
@@ -283,12 +279,16 @@ form {
   text-align: center;
 }
 
+form textarea {
+  margin: 0 auto;
+}
+
 fieldset.question legend {
   margin: 0 auto;
 }
 
 .questionSection1 {
-  height: 50vh;
+  height: 60vh;
 }
 
 .questionSection2, .questionSection3 {

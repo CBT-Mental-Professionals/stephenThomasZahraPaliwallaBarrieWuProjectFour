@@ -1,5 +1,8 @@
 form {
     text-align: center;
+    textarea {
+        margin: 0 auto;
+    }
 }
 
 fieldset.question {
@@ -9,7 +12,7 @@ fieldset.question {
 }
 
 .questionSection1 {
-    height: 50vh;
+    height: 60vh;
 }
 
 .questionSection2, .questionSection3 {
