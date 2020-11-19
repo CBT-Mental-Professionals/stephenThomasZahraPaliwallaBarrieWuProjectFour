@@ -3,8 +3,36 @@
 //     border: .5px solid red;
 // }
 
+html {
+    font-size: 62.5%;
+}
+
 h1, h2 {
     font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    font-size: 3.3rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.7rem;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.8rem;
+    letter-spacing: .6px;
+}
+
+legend {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 1.8rem;
 }
 
 body, textarea, button {
@@ -22,5 +50,5 @@ textarea {
 .wrapper {
     max-width: 350px;
     margin: 0 auto;
-    width: 95%;
+    width: 85%;
 }

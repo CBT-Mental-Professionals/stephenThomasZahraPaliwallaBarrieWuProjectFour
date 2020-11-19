@@ -235,8 +235,36 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 h1, h2 {
   font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  font-size: 3.3rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.7rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.8rem;
+  letter-spacing: .6px;
+}
+
+legend {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 1.8rem;
 }
 
 body, textarea, button {
@@ -254,10 +282,10 @@ textarea {
 .wrapper {
   max-width: 350px;
   margin: 0 auto;
-  width: 95%;
+  width: 85%;
 }
 
-header .headerText {
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -268,11 +296,17 @@ header .headerText {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40vh;
+  height: 20vh;
 }
 
-header .headerText h1 {
+header h1 {
   text-align: center;
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+
+header p {
+  margin: 22px 30px;
 }
 
 form {
@@ -287,10 +321,43 @@ fieldset.question legend {
   margin: 0 auto;
 }
 
-.questionSection1 {
-  height: 60vh;
+.questionSection {
+  height: 100vh;
 }
 
-.questionSection2, .questionSection3 {
-  height: 100vh;
+fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+label {
+  position: relative;
+  font-size: 2.3rem;
+  padding: 20px 0;
+}
+
+label::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+label::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: grey;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -11,10 +11,38 @@ fieldset.question {
     }
 }
 
-.questionSection1 {
-    height: 60vh;
+.questionSection {
+    height: 100vh;
 }
 
-.questionSection2, .questionSection3 {
-    height: 100vh;
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    position: relative;
+    font-size: 2.3rem;
+    padding: 20px 0;
+}
+
+label::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+label::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
