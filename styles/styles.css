@@ -267,6 +267,10 @@ label {
   font-size: 1.8rem;
 }
 
+textarea {
+  font-size: 1.8rem;
+}
+
 body, textarea, button {
   font-family: 'Karla', sans-serif;
 }
