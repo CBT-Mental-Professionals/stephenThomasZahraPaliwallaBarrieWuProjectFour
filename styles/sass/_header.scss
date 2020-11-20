@@ -1,0 +1,15 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20vh;
+    h1 {
+        text-align: center;
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+    p {
+        margin: 22px 30px;
+    }
+}
+

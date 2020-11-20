@@ -1,0 +1,104 @@
+form {
+    text-align: center;
+    textarea {
+        margin: 20px auto;
+    }
+}
+
+fieldset.question {
+    legend {
+        margin: 0 auto;
+    }
+}
+
+.questionSection {
+    height: 100vh;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    position: relative;
+    font-size: 2.3rem;
+    padding: 20px 0;
+    padding-left: 45px;
+    cursor: pointer;
+}
+
+label::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    top: 19px;
+    left: 0;
+    border: 3px solid black;
+}
+
+label::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: black;
+    position: absolute;
+    top: 24px;
+    left: 5px;
+    transition: all .5s;
+    opacity: 0;
+}
+
+// getting the circle to go away --- circle is gone, but i can't get the space to the left of "Tell us" to disappear
+.additionalComments::before,
+.additionalComments::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    padding-left: 0px;
+    display: inline;
+    border-radius: 0%;
+    top: 0px;
+    left: 0px;
+    border: none;
+}
+
+input[type="radio"]:checked + label::after {
+    opacity: 1;
+}
+
+
+textarea {
+    font-size: 1.8rem;
+    display: block;
+    border: 3px solid black;
+    padding: 20px;
+}
+
+button {
+    font-size: 1.8rem;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 3px 3px white, 6px 6px black;
+    position: relative;
+    // animation: all 2s;
+}
+
+button:hover,
+button:focus {
+    background: black;
+    color: white;
+}
+button:active {
+    top: 3px;
+    left: 3px;
+    box-shadow: 3px 3px white;
+}

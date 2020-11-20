@@ -1,0 +1,71 @@
+// DEBUGGER
+// * {
+//     border: .5px solid red;
+// }
+
+html {
+    font-size: 62.5%;
+}
+
+h1, h2 {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    font-size: 3.3rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.7rem;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.8rem;
+    letter-spacing: .6px;
+}
+
+legend {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 1.8rem;
+}
+
+body, textarea, button {
+    font-family: 'Karla', sans-serif;
+}
+
+fieldset {
+    border: 0;
+}
+
+.wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.questionSection,
+.results {
+    padding: 50px 0;
+}
+
+.results {
+    height: 100vh;
+    padding: 200px 0;
+    display: none;
+    a {
+        color: black;
+    }
+}
+
+.questionSection2,
+.questionSection3,
+.questionSection4 {
+    display: grid;
+    place-items: center;
+}
