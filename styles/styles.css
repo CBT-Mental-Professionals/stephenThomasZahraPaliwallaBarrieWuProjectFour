@@ -254,8 +254,8 @@ h2 {
 }
 
 p {
-  font-size: 1.8rem;
-  letter-spacing: .6px;
+  font-size: 4.5rem;
+  text-transform: uppercase;
 }
 
 legend {
@@ -294,6 +294,18 @@ fieldset {
 
 .results a {
   color: black;
+}
+
+.results li {
+  font-size: 3rem;
+}
+
+.results p {
+  font-size: 3rem;
+}
+
+.results img {
+  height: 295px;
 }
 
 .questionSection2,

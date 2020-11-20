@@ -22,8 +22,9 @@ h2 {
 }
 
 p {
-    font-size: 1.8rem;
-    letter-spacing: .6px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    // letter-spacing: .6px;
 }
 
 legend {
@@ -60,8 +61,20 @@ fieldset {
     display: none;
     a {
         color: black;
+        
+    }
+    li{ 
+        font-size: 3rem;
+    }
+    p{
+        font-size: 3rem;
+    }
+    img{
+        height: 295px;
     }
 }
+
+
 
 .questionSection2,
 .questionSection3,
