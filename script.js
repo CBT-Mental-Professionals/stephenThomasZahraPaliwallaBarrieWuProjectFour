@@ -4,6 +4,26 @@ const cbtApp = {};
 // create an array or object of scores 
 cbtApp.scoreData = [];
 
+cbtApp.answerKey = {
+    "question1": [
+        -1,
+        0,
+        1
+    ],
+    "question2": [
+        -1,
+        0,
+        1
+    ],
+    "question3": [
+        1,
+        -1
+    ]
+}
+
+
+
+
 // make function to store radio responses in variables
 cbtApp.getFormResponses = () => {
     // store radio checked data
@@ -13,10 +33,32 @@ cbtApp.getFormResponses = () => {
     console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
     cbtApp.userTextAreaAnswer = $('textarea').val();
     console.log(cbtApp.userTextAreaAnswer);
+
+    cbtApp.questionOneValue = cbtApp.answerKey.question1[cbtApp.userQuestionOneAnswer];
+    console.log(`cbtApp.questionOneValue is`, cbtApp.questionOneValue);
+    cbtApp.questionTwoValue = cbtApp.answerKey.question2[cbtApp.userQuestionTwoAnswer];
+    console.log(`cbtApp.questionTwoValue is`, cbtApp.questionTwoValue);
+    cbtApp.questionThreeValue = cbtApp.answerKey.question3[cbtApp.userQuestionThreeAnswer];
+    console.log(`cbtApp.questionThreeValue is`, cbtApp.questionThreeValue);
+
+    
 }
 
 
+cbtApp.addFormResponses = () => {
+    cbtApp.addedFormResponses = (cbtApp.questionOneValue + cbtApp.questionTwoValue + cbtApp.questionThreeValue + cbtApp.polarity);
+    console.log(cbtApp.addedFormResponses)
+} 
 
+cbtApp.numberToResult = () => {
+    if (cbtApp.addedFormResponses < -0.3){
+        let resultDisplay = `<p> You suck </p> `;
+        $('.results').append(resultDisplay)
+        console.log(resultDisplay);
+        
+    };
+    
+} 
 
 // storing API Url in variable 
 cbtApp.apiUrl = "https://sentim-api.herokuapp.com/api/v1/";
@@ -59,7 +101,9 @@ cbtApp.getResults = () => {
             .then((res) => {
                 cbtApp.polarity = res.result.polarity
                 console.log(`cbtApp.polarity at the bottom`, cbtApp.polarity)
-        });
+                cbtApp.addFormResponses();
+                cbtApp.numberToResult();
+            });
     });
 }
 

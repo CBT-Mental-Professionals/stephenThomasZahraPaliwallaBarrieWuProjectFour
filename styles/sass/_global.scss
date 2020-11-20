@@ -38,6 +38,7 @@ label {
 
 textarea {
     font-size: 1.8rem;
+    display: block;
 }
 
 body, textarea, button {
@@ -46,10 +47,6 @@ body, textarea, button {
 
 fieldset {
     border: 0;
-}
-
-textarea {
-    display: block;
 }
 
 .wrapper {
