@@ -177,7 +177,10 @@ cbtApp.goDownToNextQuestion = () => {
 cbtApp.init = () => {
     cbtApp.goDownToNextQuestion();
     cbtApp.getResults();
+<<<<<<< HEAD
     cbtApp.textAreaCounter();
+=======
+>>>>>>> aed1b59c06dee785577c9d49ea13c6e1d9df6e53
 };
 
 // DOC READY
