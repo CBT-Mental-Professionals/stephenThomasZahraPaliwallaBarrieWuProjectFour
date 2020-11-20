@@ -21,7 +21,11 @@ cbtApp.answerKey = {
     ]
 }
 
-
+cbtApp.resultsToDisplay = {
+    bad: `<p> You suck </p>`,
+    ok: `<p> You ok </p>`,
+    good: `<p> You good </p>`
+}
 
 
 // make function to store radio responses in variables
@@ -46,18 +50,23 @@ cbtApp.getFormResponses = () => {
 
 
 cbtApp.addFormResponses = () => {
-    cbtApp.addedFormResponses = (cbtApp.questionOneValue + cbtApp.questionTwoValue + cbtApp.questionThreeValue + cbtApp.polarity);
+    cbtApp.addedFormResponses = (cbtApp.questionOneValue + cbtApp.questionTwoValue + cbtApp.questionThreeValue + cbtApp.polarity) / 4;
     console.log(cbtApp.addedFormResponses)
 } 
 
 cbtApp.numberToResult = () => {
+    $('.answer').empty();
     if (cbtApp.addedFormResponses < -0.3){
-        let resultDisplay = `<p> You suck </p> `;
-        $('.results').append(resultDisplay)
-        console.log(resultDisplay);
-        
-    };
-    
+        let resultDisplay = `${cbtApp.resultsToDisplay.bad}`;
+        $('.answer').append(resultDisplay)
+    } else if (cbtApp.addedFormResponses >= -0.3 && cbtApp.addedFormResponses <= 0.3) {
+        let resultDisplay = `${cbtApp.resultsToDisplay.ok}`;
+        $('.answer').append(resultDisplay)
+    } else {
+        let resultDisplay = `${cbtApp.resultsToDisplay.good}`;
+        $('.answer').append(resultDisplay)
+    };    
+    console.log(resultDisplay);
 } 
 
 // storing API Url in variable 
@@ -99,8 +108,8 @@ cbtApp.getResults = () => {
         // display result(s) to (new) page
         $.when(cbtApp.sentimPromise)
             .then((res) => {
-                cbtApp.polarity = res.result.polarity
-                console.log(`cbtApp.polarity at the bottom`, cbtApp.polarity)
+                cbtApp.polarity = res.result.polarity;
+                console.log(`cbtApp.polarity at the bottom`, cbtApp.polarity);
                 cbtApp.addFormResponses();
                 cbtApp.numberToResult();
             });
@@ -108,10 +117,51 @@ cbtApp.getResults = () => {
 }
 
 
+cbtApp.goDownToNextQuestion = () => {
+    // listen to radio buttons being selected
+    $('.questionOneAnswer').click(function () {
+        setTimeout(function () {
+            console.log(`something has been checked`);
+            $('html, body').animate({
+                scrollTop: $(".questionSection2").offset().top
+            }, 400);
+        }, 200);
+    });
+    $('.questionTwoAnswer').click(function () {
+        setTimeout(function () {
+            console.log(`something has been checked`);
+            $('html, body').animate({
+                scrollTop: $(".questionSection3").offset().top
+            }, 400);
+        }, 200);
+    });
+    $('.questionThreeAnswer').click(function () {
+        setTimeout(function () {
+            console.log(`something has been checked`);
+            $('html, body').animate({
+                scrollTop: $(".questionSection4").offset().top
+            }, 400);
+        }, 200);
+    });
+    $('form').on('submit', function () {
+        // animate the button TODO
+        // $(this).transform
+        // expand results section (experimental)
+        // $('.results').css({ display: 'initial' }, 0);
+        $('.results').show();
+        // navigate down to results
+        setTimeout(function () {
+            $('html, body').animate({
+                scrollTop: $(".results").offset().top
+            }, 400);
+        }, 300);
+    });
+};
 
 
 // INIT
 cbtApp.init = () => {
+    cbtApp.goDownToNextQuestion();
     cbtApp.getResults();
 };
 

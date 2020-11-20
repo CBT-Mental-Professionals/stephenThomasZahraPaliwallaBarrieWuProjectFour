@@ -1,7 +1,7 @@
 form {
     text-align: center;
     textarea {
-        margin: 0 auto;
+        margin: 20px auto;
     }
 }
 
@@ -55,8 +55,37 @@ label::after {
     opacity: 0;
 }
 
+// getting the circle to go away --- circle is gone, but i can't get the space to the left of "Tell us" to disappear
+.additionalComments::before,
+.additionalComments::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    padding-left: 0px;
+    display: inline;
+    border-radius: 0%;
+    top: 0px;
+    left: 0px;
+    border: none;
+}
+
 input[type="radio"]:checked + label::after {
     opacity: 1;
 }
 
 
+textarea {
+    font-size: 1.8rem;
+    display: block;
+    border: 3px solid black;
+    padding: 20px;
+}
+
+button {
+    font-size: 1.8rem;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 3px 3px white, 6px 6px black;
+}

@@ -35,12 +35,6 @@ label {
     font-size: 1.8rem;
 }
 
-
-textarea {
-    font-size: 1.8rem;
-    display: block;
-}
-
 body, textarea, button {
     font-family: 'Karla', sans-serif;
 }
@@ -53,4 +47,25 @@ fieldset {
     max-width: 350px;
     margin: 0 auto;
     width: 85%;
+}
+
+.questionSection,
+.results {
+    padding: 50px 0;
+}
+
+.results {
+    height: 100vh;
+    padding: 200px 0;
+    display: none;
+    a {
+        color: black;
+    }
+}
+
+.questionSection2,
+.questionSection3,
+.questionSection4 {
+    display: grid;
+    place-items: center;
 }
