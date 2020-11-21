@@ -290,11 +290,7 @@ fieldset {
   color: black;
 }
 
-.results li {
-  font-size: 2.2rem;
-}
-
-.results p {
+.results li, .results p {
   font-size: 2.2rem;
 }
 
@@ -511,71 +507,4 @@ button:active {
 
 .finalForm p {
   margin: 0;
-}
-
-header, main {
-  background-color: white;
-}
-
-.stickyTriangles {
-  position: fixed;
-}
-
-.triangles {
-  position: relative;
-  left: -250px;
-}
-
-.triangle1 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 500px 0 500px 600px;
-  border-color: transparent transparent transparent black;
-  position: absolute;
-  top: 0;
-  left: -600px;
-  z-index: 1;
-}
-
-.triangle2 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 500px 0 500px 600px;
-  border-color: transparent transparent transparent white;
-  position: absolute;
-  top: 0;
-  left: -606px;
-  z-index: 2;
-}
-
-.triangle3 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 500px 600px 500px 0;
-  border-color: transparent black transparent transparent;
-  position: absolute;
-  top: -250px;
-  left: 509px;
-  z-index: 1;
-}
-
-.triangle4 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 500px 600px 500px 0;
-  border-color: transparent white transparent transparent;
-  position: absolute;
-  top: -250px;
-  left: 515px;
-  z-index: 2;
-}
-
-.mainWrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
 }

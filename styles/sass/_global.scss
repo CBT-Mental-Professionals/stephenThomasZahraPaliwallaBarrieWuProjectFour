@@ -24,7 +24,6 @@ h2 {
 p {
     font-size: 4.5rem;
     text-transform: uppercase;
-    // letter-spacing: .6px;
 }
 
 legend {
@@ -50,21 +49,13 @@ fieldset {
     width: 85%;
 }
 
-.questionSection,
-.results {
-    // padding: 5px 0;
-}
-
 .results {
     height: 100vh;
     display: none;
     a {
         color: black;
     }
-    li{ 
-        font-size: 2.2rem;
-    }
-    p{
+    li, p { 
         font-size: 2.2rem;
     }
     img{
