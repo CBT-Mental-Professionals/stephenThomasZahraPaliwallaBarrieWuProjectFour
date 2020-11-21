@@ -58,10 +58,17 @@ cbtApp.textAreaCounter = () => {
     $('textarea').bind('input propertychange', function () {
         let $textAreaNumber = $(this).val().length;
         console.log($textAreaNumber)
-        if ($textAreaNumber === 1){
-            alert ( `Keep going`)
+        if ($textAreaNumber === 10){
+            $('.errorMessage').text( `...keep typing`)
+        } else if ($textAreaNumber === 20){
+            $('.errorMessage').toggleClass('rotate')
+
+        } else if ($textAreaNumber === 25) {
+            $('.errorMessage').toggleClass('rotate')
+        } else if ($textAreaNumber === 30) {
+            $('.errorMessage').toggleClass('rotate')
         }
-    }) 
+    })
 }
 
 
@@ -137,7 +144,7 @@ cbtApp.getResults = () => {
 
 cbtApp.goDownToNextQuestion = () => {
     // listen to radio buttons being selected
-    $('.questionOneAnswer').click(function () {
+    $('.questionOneAnswer').on('click', function () {
         setTimeout(function () {
             console.log(`something has been checked`);
             $('html, body').animate({
