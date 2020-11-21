@@ -52,25 +52,26 @@ fieldset {
 
 .questionSection,
 .results {
-    padding: 50px 0;
+    // padding: 5px 0;
 }
 
 .results {
     height: 100vh;
-    padding: 200px 0;
     display: none;
     a {
         color: black;
-        
     }
     li{ 
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
     p{
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
     img{
-        height: 295px;
+        height: 150px;
+    }
+    .permaAnswer p {
+        margin: 15px 0;
     }
 }
 
