@@ -440,6 +440,10 @@ label::before {
   border: 3px solid black;
 }
 
+label::before:focus {
+  border: 1px solid black;
+}
+
 label::after {
   content: '';
   width: 20px;
