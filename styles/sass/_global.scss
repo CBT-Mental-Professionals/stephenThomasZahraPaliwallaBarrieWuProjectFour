@@ -22,8 +22,8 @@ h2 {
 }
 
 p {
-    font-size: 1.8rem;
-    letter-spacing: .6px;
+    font-size: 4.5rem;
+    text-transform: uppercase;
 }
 
 legend {
@@ -49,19 +49,24 @@ fieldset {
     width: 85%;
 }
 
-.questionSection,
-.results {
-    padding: 50px 0;
-}
-
 .results {
     height: 100vh;
-    padding: 200px 0;
     display: none;
     a {
         color: black;
     }
+    li, p { 
+        font-size: 2.2rem;
+    }
+    img{
+        height: 150px;
+    }
+    .permaAnswer p {
+        margin: 15px 0;
+    }
 }
+
+
 
 .questionSection2,
 .questionSection3,

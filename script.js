@@ -22,9 +22,13 @@ cbtApp.answerKey = {
 }
 
 cbtApp.resultsToDisplay = {
-    bad: `<p> You suck </p>`,
-    ok: `<p> You ok </p>`,
-    good: `<p> You good </p>`
+    bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
+    <p> You suck </p>`,
+    ok: `<img src="assets/barrie.png" alt="Barrie with a hesistant but friendly face">
+    <p> You ok </p>`,
+    good: `
+    <img src="assets/zahra.png" alt="Zahra with a friendly face">
+    <p> You good </p>`
 }
 
 
@@ -47,6 +51,20 @@ cbtApp.getFormResponses = () => {
 
     
 }
+
+// testing out text area error handling
+
+cbtApp.textAreaCounter = () => {
+    $('textarea').bind('input propertychange', function () {
+        let $textAreaNumber = $(this).val().length;
+        console.log($textAreaNumber)
+        if ($textAreaNumber === 1){
+            alert ( `Keep going`)
+        }
+    }) 
+}
+
+
 
 
 cbtApp.addFormResponses = () => {
@@ -143,7 +161,8 @@ cbtApp.goDownToNextQuestion = () => {
             }, 400);
         }, 200);
     });
-    $('form').on('submit', function () {
+    $('form').on('submit', function (e) {
+        e.preventDefault();
         // animate the button TODO
         // $(this).transform
         // expand results section (experimental) 
@@ -163,6 +182,7 @@ cbtApp.goDownToNextQuestion = () => {
 cbtApp.init = () => {
     cbtApp.goDownToNextQuestion();
     cbtApp.getResults();
+    cbtApp.textAreaCounter();
 };
 
 // DOC READY
