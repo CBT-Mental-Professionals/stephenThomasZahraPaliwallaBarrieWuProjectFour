@@ -146,7 +146,7 @@ cbtApp.goDownToNextQuestion = () => {
     $('form').on('submit', function () {
         // animate the button TODO
         // $(this).transform
-        // expand results section (experimental)
+        // expand results section (experimental) 
         // $('.results').css({ display: 'initial' }, 0);
         $('.results').show();
         // navigate down to results
