@@ -428,6 +428,10 @@ label {
   cursor: pointer;
 }
 
+input:focus + label {
+  border: 1px solid black;
+}
+
 label::before {
   content: '';
   width: 30px;
@@ -507,4 +511,65 @@ button:active {
 
 .finalForm p {
   margin: 0;
+}
+
+.errorMessage {
+  height: 3.3rem;
+  font-size: 2.5rem;
+  color: white;
+  background: black;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.rotate {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.puffIn {
+  -webkit-animation-name: puffIn;
+          animation-name: puffIn;
+}
+
+@-webkit-keyframes puffIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+@keyframes puffIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    -webkit-filter: blur(2px);
+            filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
 }
