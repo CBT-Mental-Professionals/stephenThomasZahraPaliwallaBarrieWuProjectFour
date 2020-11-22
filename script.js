@@ -21,6 +21,30 @@ cbtApp.answerKey = {
     ]
 }
 
+cbtApp.textToDisplay = {
+    h1: [
+        'fuck off',
+        'nice to see you',
+        'arr me matey'
+    ],
+    h2: [
+        'hello',
+        'hi',
+        'testing'
+    ]
+}
+
+
+cbtApp.skinListener = () => {
+    $('.skinSelect').on('click', function() {
+        let skin = $(this).val();
+        for (i in cbtApp.textToDisplay) {
+            $(i).text(cbtApp.textToDisplay[i][skin]);
+        }
+    })
+}
+
+
 cbtApp.resultsToDisplay = {
     bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
     <p> You suck </p>`,
@@ -190,9 +214,11 @@ cbtApp.init = () => {
     cbtApp.goDownToNextQuestion();
     cbtApp.getResults();
     cbtApp.textAreaCounter();
+    cbtApp.skinListener();
 };
 
 // DOC READY
 $(function(){
     cbtApp.init();
 });
+
