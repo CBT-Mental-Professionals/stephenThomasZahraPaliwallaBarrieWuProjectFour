@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b98553b8ad.js" crossorigin="anonymous"></script>
 
     <!-- button animation link- also a puffin scss and magictime file -->
     <link rel="stylesheet" href="yourpath/magic.min.css">
@@ -38,39 +39,39 @@
                     <!-- <h2>HOW THE FUCK?</h2> -->
                     <h2>Answer questions. Get some answers.</h2>
                     <fieldset class="question question1">
-                        <legend>do you fucking sleep?</legend>
+                        <legend class="legendOne">do you fucking sleep?</legend>
                         <input type="radio" name="questionOneAnswer" value="0" id="questionOneAnswerOne" class="srOnly questionOneAnswer" required>
-                        <label for="questionOneAnswerOne">What the fuck is sleep?</label>
+                        <label class="questionOneAnswerOne" for="questionOneAnswerOne">What the fuck is sleep?</label>
                         <input type="radio" name="questionOneAnswer" value="1" id="questionOneAnswerTwo" class="srOnly questionOneAnswer">
-                        <label for="questionOneAnswerTwo">3-6 hours</label>
+                        <label class="questionOneAnswerTwo" for="questionOneAnswerTwo">3-6 hours</label>
                         <input type="radio" name="questionOneAnswer" value="2" id="questionOneAnswerThree" class="srOnly questionOneAnswer">
-                        <label for="questionOneAnswerThree">6-9 hours</label>
+                        <label class="questionOneAnswerThree" for="questionOneAnswerThree">6-9 hours</label>
                     </fieldset>
                 </section>
                 <section class="questionSection questionSection2">
                     <fieldset class="question question2">
-                        <legend>How many meals have you had today?</legend>
+                        <legend class="legendTwo">How many meals have you had today?</legend>
                         <input type="radio" name="questionTwoAnswer" value="0" id="questionTwoAnswerOne" class="srOnly questionTwoAnswer" required>
-                        <label for="questionTwoAnswerOne">Who has time to eat?</label>
+                        <label class="questionTwoAnswerOne" for="questionTwoAnswerOne">Who has time to eat?</label>
                         <input type="radio" name="questionTwoAnswer" value="1" id="questionTwoAnswerTwo" class="srOnly questionTwoAnswer">
-                        <label for="questionTwoAnswerTwo">1 - 2 meals</label>
+                        <label class="questionTwoAnswerTwo" for="questionTwoAnswerTwo">1 - 2 meals</label>
                         <input type="radio" name="questionTwoAnswer" value="2" id="questionTwoAnswerThree" class="srOnly questionTwoAnswer">
-                        <label for="questionTwoAnswerThree">3+ meals</label>
+                        <label class="questionTwoAnswerThree" for="questionTwoAnswerThree">3+ meals</label>
                     </fieldset>
                 </section>
                 <section class="questionSection questionSection3">
                     <fieldset class="question question3" >
-                        <legend>Have you been active today?</legend>
+                        <legend class="legendThree">Have you been active today?</legend>
                         <input type="radio" name="questionThreeAnswer" value="0" id="questionThreeAnswerOne" class="srOnly questionThreeAnswer" required>
-                        <label for="questionThreeAnswerOne">Yes</label>
+                        <label class="questionThreeAnswerOne" for="questionThreeAnswerOne">Yes</label>
                         <input type="radio" name="questionThreeAnswer" value="1" id="questionThreeAnswerTwo" class="srOnly questionThreeAnswer">
-                        <label for="questionThreeAnswerTwo">ALL I DO IS CODE</label>
+                        <label class="questionThreeAnswerTwo" for="questionThreeAnswerTwo">ALL I DO IS CODE</label>
                     </fieldset>
                 </section>
                 <section class="questionSection questionSection4">
                     <div class="finalForm"> 
-                        <p aria-hidden="true">Tell us about one success and one challenge that you faced.</p>
-                        <label for="additionalComments" class="additionalComments srOnly"> Tell us about one success and one challenge that you faced.</label>
+                        <p class="textAreaCopy" aria-hidden="true">Tell us about one success and one challenge that you faced.</p>
+                        <label for="additionalComments" class="additionalComments srOnly textAreaCopy"> Tell us about one success and one challenge that you faced.</label>
                         <!-- <p class="errorMessage">please type a minimum of 30 characters</p> -->
                         
                         <p class="bubble speech errorMessaging">please type a minimum of 30 characters</p>
@@ -100,7 +101,7 @@
                             <a href="https://www.youtube.com/watch?v=ZXsQAXx_ao0"> Shia LaBeouf</a>
                         </li>
                     </ul>
-                    <p><a href="#header">Fucking Start Again</a></p>
+                    <p><a href="#header" onClick="window.location.reload()">Fucking Start Again</a></p>
                 </div>
             </div>
             

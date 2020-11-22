@@ -3,6 +3,8 @@ const cbtApp = {};
 
 // storing API Url in variable 
 cbtApp.apiUrl = "https://sentim-api.herokuapp.com/api/v1/";
+// default skin setting
+cbtApp.skin = 3;
 
 // create an object with array of scores per question 
 cbtApp.answerKey = {
@@ -24,61 +26,167 @@ cbtApp.answerKey = {
 
 cbtApp.answerKeyIcons = {
     "question1": [
-        '⭐️',
-        '⭐️⭐️',
-        '⭐️⭐️⭐️'
+        '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>',
+        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>',
+        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'
     ],
     "question2": [
-        '⭐️',
-        '⭐️⭐️',
-        '⭐️⭐️⭐️'
+        '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>',
+        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>',
+        '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'
     ],
     "question3": [
-        '✅',
-        '❎'
+        '<i class="fas fa-check-circle"></i>',
+        '<i class="fas fa-times-circle"></i>'
     ]
 }
+
+cbtApp.htmlData = [
+    // barrie mode
+    {
+        badImage: 'barrie.png',
+        badImageAlt: 'badImageAlt',
+        okImage: 'barrie2.png',
+        okImageAlt: 'okImageAlt',
+        goodImage: 'barrie3.png',
+        goodImageAlt: 'goodImageAlt',
+        badMessage: 'Barrie thinks you are not good',
+        okMessage: 'Barrie thinks you are ok',
+        goodMessage: 'Barrie thinks you are good'
+    },
+    // zahra mode
+    {
+        badImage: 'zahra1.png',
+        okImage: 'zahra2.png',
+        goodImage: 'zahra3.png',
+        message: 'Barrie thinks you are ok'
+    },
+    // stephen mode
+    {
+        badImage: 'stephen1.png',
+        okImage: 'stephen2.png',
+        goodImage: 'stephen3.png',
+        message: 'Barrie thinks you are good'
+    },
+    // default settings
+    {
+        badImage: 'stephen.png',
+        okImage: 'barrie.png',
+        goodImage: 'zahra.png',
+        message: 'we all think you are not good'
+    }
+]
 
 // *******************  BEFORE FORM SUBMIT   ******************* START
 
 
 // obj w/ result properties to append to final results
 cbtApp.textToDisplay = {
-    h1: [
+    'h1': [
         'fuck off',
         'nice to see you',
         'arr me matey'
     ],
-    h2: [
+    'h2': [
         'hello',
         'hi',
         'testing'
-    ]
+    ],
+    // question one 
+    '.legendOne': [
+        'barrie question',
+        'zahra question',
+        'stephen question'
+    ],
+    '.questionOneAnswerOne': [
+        'choice one barrie',
+        'choice one zahra',
+        'choice one stephen'
+
+    ],
+    '.questionOneAnswerTwo': [
+        'choice two barrie',
+        'choice two zahra',
+        'choice two stephen'
+
+    ],
+    '.questionOneAnswerThree': [
+        'choice three barrie',
+        'choice three zahra',
+        'choice three stephen'
+
+    ],
+    // question two
+    '.legendTwo': [
+        'barrie question',
+        'zahra question',
+        'stephen question'
+    ],
+    '.questionTwoAnswerOne': [
+        'choice one barrie',
+        'choice one zahra',
+        'choice one stephen'
+
+    ],
+    '.questionTwoAnswerTwo': [
+        'choice two barrie',
+        'choice two zahra',
+        'choice two stephen'
+
+    ],
+    '.questionTwoAnswerThree': [
+        'choice three barrie',
+        'choice three zahra',
+        'choice three stephen'
+
+    ],
+    // quesiton three
+    '.legendThree': [
+        'barrie question',
+        'zahra question',
+        'stephen question'
+    ],
+    '.questionThreeAnswerOne': [
+        'choice one barrie',
+        'choice one zahra',
+        'choice one stephen'
+
+    ],
+    '.questionThreeAnswerTwo': [
+        'choice two barrie',
+        'choice two zahra',
+        'choice two stephen'
+
+    ],
+    //textarea
+    '.textAreaCopy': [
+        'barrie text prompt',
+        'zahra text prompt',
+        'stephen text prompt'
+    ],
+    // ERROR MESSAGING BUBBLE TEXTBOX
+    '.errorMessaging': [
+        'barrie text prompt',
+        'zahra text prompt',
+        'stephen text prompt'
+    ],
+
 }
 
 
 cbtApp.skinListener = () => {
     $('.skinSelect').on('click', function() {
-        let skin = $(this).val();
+        cbtApp.skin = $(this).val();
         for (i in cbtApp.textToDisplay) {
-            $(i).text(cbtApp.textToDisplay[i][skin]);
+            $(i).text(cbtApp.textToDisplay[i][cbtApp.skin]);
         }
+        console.log(cbtApp.skin);
+        
     })
 }
 
 
-cbtApp.resultsToDisplay = {
-    bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
-    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-    <p> Stephen loves you! </p>`,
-    ok: `<img src="assets/barrie.png" alt="Barrie with a hesistant but friendly face">
-    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-    <p> Thumbs up from Barrie! </p>`,
-    good: `
-    <img src="assets/zahra.png" alt="Zahra with a friendly face">
-    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-    <p> Zahra's got your back! </p>`
-}
+cbtApp.resultsToDisplay = {}
 
 
 // make function to store radio responses in variables
@@ -109,13 +217,13 @@ cbtApp.textAreaCounter = () => {
         let $textAreaNumber = $(this).val().length;
         console.log($textAreaNumber)
         if ($textAreaNumber === 10){
-            $('.errorMessaging').text( `...keep typing... 10 characters to go`)
+            $('.errorMessaging').text( `...keep typing... 20 characters to go`)
         } else if ($textAreaNumber === 20){
-            $('.errorMessaging').toggleClass('rotate')
+            $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 10 characters to go`)
         } else if ($textAreaNumber === 25) {
-            $('.errorMessaging').toggleClass('rotate')
+            $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 5 characters to go`)
         } else if ($textAreaNumber === 30) {
-            $('.errorMessaging').toggleClass('rotate')
+            $('.errorMessaging').toggleClass('rotate').text(`...you did it!`)
         }
     })
 }
@@ -198,16 +306,32 @@ cbtApp.getResults = () => {
         
         
         console.log(`cbtApp.answerKeyIcons is`, cbtApp.answerKeyIcons)
-        console.log(`cbtApp.answerKeyIcons.question1 is`, cbtApp.answerKeyIcons.question1)
+        console.log(`cbtApp.answerKeyIcons.question1 is`, cbtApp.answerKeyIcons.question1[0])
         console.log(`cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer] is`, cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer])
         console.log(`[cbtApp.userQuestionOneAnswer] is`, cbtApp.userQuestionOneAnswer)
         
         cbtApp.stuffThatHappensWhenApiComesBack();
 
 
-        
+        // Object within the 'sumbit' function
+        cbtApp.resultsToDisplay = {
+            bad: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].badImage}" alt="Stephen with a stern look on his face">
+            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
+            <p> Stephen loves you! </p>`, 
+            ok: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].okImage}" alt="Barrie with a hesistant but friendly face">
+            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
+            <p> Thumbs up from Barrie!  </p>`,
+            good: `
+            <img src="assets/${cbtApp.htmlData[cbtApp.skin].goodImage}" alt="Zahra with a friendly face">
+            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
+            <p> Zahra's got your back! </p>`
+        }
     });
 }
+//    
+// ${cbtAp.htmlData[cbtApp.skin].badMessage}
+// ${cbtAp.htmlData[cbtApp.skin].okMessage}
+// ${cbtAp.htmlData[cbtApp.skin].goodMessage}
 
 cbtApp.scrollToResultsOnFormSubmit = () => {
     $('form').on('submit', function (e) {
@@ -267,12 +391,19 @@ cbtApp.displayResponseResultsToThePage = () => {
 
 // *******************  AFTER FORM SUBMIT   ******************* END
 
+
+
 // INIT
 cbtApp.init = () => {
     cbtApp.goDownToNextQuestion();
     cbtApp.getResults();
     cbtApp.textAreaCounter();
     cbtApp.skinListener();
+    
+    //To refresh page
+    $('.reloadButton').on('click', function () {
+        window.location.reload(true);
+    });
 };
 
 // DOC READY
