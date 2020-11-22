@@ -1,8 +1,12 @@
 form {
-    text-align: center;
     textarea {
         margin: 20px auto;
     }
+    h2, legend{
+        text-align: center;
+
+    }
+    
 }
 
 fieldset.question {
@@ -89,7 +93,7 @@ textarea {
     height: 150px;
 }
 
-button {
+button , .startAgainButton{
     font-size: 1.8rem;
     margin: 10px;
     padding: 10px;
@@ -97,6 +101,7 @@ button {
     border: 3px solid black;
     box-shadow: 3px 3px white, 6px 6px black;
     position: relative;
+    
 }
 
 button:hover,

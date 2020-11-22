@@ -310,6 +310,15 @@ fieldset {
   place-items: center;
 }
 
+.results {
+  text-align: center;
+}
+
+.permaAnswer ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -391,12 +400,12 @@ header p {
   z-index: 2;
 }
 
-form {
-  text-align: center;
-}
-
 form textarea {
   margin: 20px auto;
+}
+
+form h2, form legend {
+  text-align: center;
 }
 
 fieldset.question legend {
@@ -485,7 +494,7 @@ textarea {
   height: 150px;
 }
 
-button {
+button, .startAgainButton {
   font-size: 1.8rem;
   margin: 10px;
   padding: 10px;

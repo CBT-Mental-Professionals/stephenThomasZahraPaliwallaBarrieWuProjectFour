@@ -44,36 +44,51 @@ cbtApp.answerKeyIcons = {
 cbtApp.htmlData = [
     // barrie mode
     {
-        badImage: 'barrie.png',
+        badImage: 'barrieBad.png',
         badImageAlt: 'badImageAlt',
-        okImage: 'barrie2.png',
+        okImage: 'barrieOk.png',
         okImageAlt: 'okImageAlt',
-        goodImage: 'barrie3.png',
+        goodImage: 'barrieGood.png',
         goodImageAlt: 'goodImageAlt',
-        badMessage: 'Barrie thinks you are not good',
-        okMessage: 'Barrie thinks you are ok',
-        goodMessage: 'Barrie thinks you are good'
+        badMessage: 'Barrie thinks you arent doing too well! Reach out to a friend!',
+        okMessage: 'Barrie thinks you are doing alright! ',
+        goodMessage: 'Barrie thinks you are well, keep up the good work!'
     },
     // zahra mode
     {
-        badImage: 'zahra1.png',
+        badImage: 'zahra3.png',
+        badImageAlt: 'zahra is looking concerned',
         okImage: 'zahra2.png',
-        goodImage: 'zahra3.png',
-        message: 'Barrie thinks you are ok'
+        okImageAlt: 'Zahra is half smiling',
+        goodImage: 'zahra.png',
+        goodImageAlt: 'zahra is smiling with joy',
+        badMessage: 'Bro to Bro, you need to change it up',
+        okMessage: 'Bro, you could be doing better! ',
+        goodMessage: 'Bro, you thriving'
     },
     // stephen mode
     {
-        badImage: 'stephen1.png',
-        okImage: 'stephen2.png',
-        goodImage: 'stephen3.png',
-        message: 'Barrie thinks you are good'
+        badImage: 'stephenBad.png',
+        badImageAlt: 'badImageAlt',
+        okImage: 'stephenOk.png',
+        okImageAlt: 'okImageAlt',
+        goodImage: 'stephenGood.png',
+        goodImageAlt: 'goodImageAlt',
+        badMessage: 'Mate. From one pirate to another... life is long. Your day will come.',
+        okMessage: 'Mate, not bad. Keep up the good work. Toss the bad work',
+        goodMessage: 'Christ mate what are you the pope arrr...'
     },
     // default settings
     {
         badImage: 'stephen.png',
+        badImageAlt: 'badImageAlt',
         okImage: 'barrie.png',
+        okImageAlt: 'okImageAlt',
         goodImage: 'zahra.png',
-        message: 'we all think you are not good'
+        goodImageAlt: 'goodImageAlt',
+        badMessage: 'Stephen says: ahh fuck',
+        okMessage: 'Barrie says: you are ok',
+        goodMessage: 'Zahra says: good job'
     }
 ]
 
@@ -81,96 +96,111 @@ cbtApp.htmlData = [
 
 
 // obj w/ result properties to append to final results
+// 1: BARRIE MODE /
+// 2: ZAHRA MODE /
+// 3: STEPHEN MODE /
+// 4: DEFAULT MODE
 cbtApp.textToDisplay = {
     'h1': [
-        'fuck off',
-        'nice to see you',
-        'arr me matey'
+        'Hello Friends!',
+        'Hey bro!',
+        `Mate, check yer head`,
+        'feel fucking good'
     ],
     'h2': [
-        'hello',
-        'hi',
-        'testing'
+        'Please answer the questions below, Friends! ',
+        'Answer the questions below, bro',
+        'Arr..',
+        'answer some questions. get some answers.'
     ],
     // question one 
     '.legendOne': [
-        'barrie question',
-        'zahra question',
-        'stephen question'
+        'How did you sleep last night?',
+        'How you sleeping bro?',
+        'Avast, ye. Do ye, like, sleep?',
+        'do you fucking sleep?'
     ],
     '.questionOneAnswerOne': [
-        'choice one barrie',
-        'choice one zahra',
-        'choice one stephen'
-
+        'Sadly, not well',
+        'Not well, bro',
+        `Arr. Not in a dog's life`,
+        'What the fuck is sleep?'
     ],
     '.questionOneAnswerTwo': [
-        'choice two barrie',
-        'choice two zahra',
-        'choice two stephen'
-
+        'An adaquate amount',
+        'Pretty well, bro ',
+        `Aye, a few winks, tho' not quite 40`,
+        '3-6 hours'
+        
     ],
     '.questionOneAnswerThree': [
-        'choice three barrie',
-        'choice three zahra',
-        'choice three stephen'
+        'Very well',
+        'Like a baby, bro',
+        `Mate I sleep like a dead fish every night o' the week`,
+        '6-9 hours'
 
     ],
     // question two
     '.legendTwo': [
-        'barrie question',
-        'zahra question',
-        'stephen question'
+        'How many meals did have you had today?',
+        'Did you eat, bro?',
+        `Arr... ya eatin'?`,
+        `How many fucking meals have you had today?`
     ],
     '.questionTwoAnswerOne': [
-        'choice one barrie',
-        'choice one zahra',
-        'choice one stephen'
+        'Didnt have the time',
+        'Too busy bro',
+        `Not a bite since last the sun was 'fore the mainsail (yesterday)`,
+        'Who has time to eat?'
 
     ],
     '.questionTwoAnswerTwo': [
-        'choice two barrie',
-        'choice two zahra',
-        'choice two stephen'
+        'A few meals',
+        '1-2 meals bro',
+        `Been nibblin'`,
+        '1-3 meals'
 
     ],
     '.questionTwoAnswerThree': [
-        'choice three barrie',
-        'choice three zahra',
-        'choice three stephen'
+        '3+ meals a day!',
+        'gains, bro',
+        'I feast proper',
+        '3+ meals'
 
     ],
     // quesiton three
     '.legendThree': [
-        'barrie question',
-        'zahra question',
-        'stephen question'
+        'Have you had the chance to move your body?',
+        'Did you lift today, bro?',
+        `Arr.. have ye been shufflin' yer corpse about any, this day`,
+        'Have you been active today?'
     ],
     '.questionThreeAnswerOne': [
-        'choice one barrie',
-        'choice one zahra',
-        'choice one stephen'
-
+        'Yes',
+        'Duh, bro',
+        'Today, I shuffled',
+        'Yes'
     ],
     '.questionThreeAnswerTwo': [
-        'choice two barrie',
-        'choice two zahra',
-        'choice two stephen'
-
+        'Not today',
+        'Rest day, bro',
+        `I do not shuffle my corpse about, neither this way nor that, on this day`,
+        'ALL I DO IS CODE'
     ],
     //textarea
     '.textAreaCopy': [
-        'barrie text prompt',
-        'zahra text prompt',
-        'stephen text prompt'
+        'Tell me a little bit about your day so far:',
+        'Bro, tell me about your day:',
+        `Spin us a yarn encompassin' yer day`,
+        'Tell us about one success and one challenge that you faced.'
     ],
     // ERROR MESSAGING BUBBLE TEXTBOX
     '.errorMessaging': [
-        'barrie text prompt',
-        'zahra text prompt',
-        'stephen text prompt'
-    ],
-
+        'Please type at least 30 characters',
+        'Bro, dig deep. At least 30 characters',
+        'Mate, look alive. Give us at least 30 characters',
+        'Please type a minimum of 30 characters'
+    ]
 }
 
 
@@ -317,21 +347,21 @@ cbtApp.getResults = () => {
         cbtApp.resultsToDisplay = {
             bad: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].badImage}" alt="Stephen with a stern look on his face">
             <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-            <p> Stephen loves you! </p>`, 
+            <p> ${cbtApp.htmlData[cbtApp.skin].badMessage} </p>`, 
             ok: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].okImage}" alt="Barrie with a hesistant but friendly face">
             <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-            <p> Thumbs up from Barrie!  </p>`,
+            <p> ${cbtApp.htmlData[cbtApp.skin].okMessage} </p>`,
             good: `
             <img src="assets/${cbtApp.htmlData[cbtApp.skin].goodImage}" alt="Zahra with a friendly face">
             <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-            <p> Zahra's got your back! </p>`
+            <p>  ${cbtApp.htmlData[cbtApp.skin].goodMessage} </p>`
         }
     });
 }
-//    
-// ${cbtAp.htmlData[cbtApp.skin].badMessage}
-// ${cbtAp.htmlData[cbtApp.skin].okMessage}
-// ${cbtAp.htmlData[cbtApp.skin].goodMessage}
+// Stephen loves you!  Thumbs up from Barrie!  Zahra's got your back!
+// ${cbtApp.htmlData[cbtApp.skin].badMessage}
+// ${cbtApp.htmlData[cbtApp.skin].okMessage}
+// ${cbtApp.htmlData[cbtApp.skin].goodMessage}
 
 cbtApp.scrollToResultsOnFormSubmit = () => {
     $('form').on('submit', function (e) {
