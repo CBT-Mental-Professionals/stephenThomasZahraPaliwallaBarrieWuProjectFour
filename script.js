@@ -43,6 +43,30 @@ cbtApp.answerKeyIcons = {
 
 
 // obj w/ result properties to append to final results
+cbtApp.textToDisplay = {
+    h1: [
+        'fuck off',
+        'nice to see you',
+        'arr me matey'
+    ],
+    h2: [
+        'hello',
+        'hi',
+        'testing'
+    ]
+}
+
+
+cbtApp.skinListener = () => {
+    $('.skinSelect').on('click', function() {
+        let skin = $(this).val();
+        for (i in cbtApp.textToDisplay) {
+            $(i).text(cbtApp.textToDisplay[i][skin]);
+        }
+    })
+}
+
+
 cbtApp.resultsToDisplay = {
     bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
     <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
@@ -248,10 +272,11 @@ cbtApp.init = () => {
     cbtApp.goDownToNextQuestion();
     cbtApp.getResults();
     cbtApp.textAreaCounter();
-    // cbtApp.scrollToResultsOnFormSubmit();
+    cbtApp.skinListener();
 };
 
 // DOC READY
 $(function(){
     cbtApp.init();
 });
+
