@@ -117,21 +117,59 @@ button:active {
 }
 
 .finalForm p {
-    margin: 0;
+    margin-bottom: 15px;
 }
 
-.errorMessage { 
-    height: 3.3rem;
-    font-size: 2.5rem;
-    color: white;
-    background: black;
-    transition: all 1s;
-
+.errorMessaging{ 
+    height: 6.3rem;
+    font-size: 1.8rem;
+    transition:  all 1s;
 }
 
 .rotate{
   transform: rotate(360deg);
-  
-
-
 }
+
+
+/// speech bubble try out 
+
+p.bubble {
+	position: relative;
+	width: 320px;
+	text-align: center;
+	line-height: 1.4em;
+	margin: 40px auto;
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 1px;
+	font-family: sans-serif;
+	padding: 5px;
+    font-size: large;
+    bottom: -20px;
+}
+
+
+p.bubble:before,
+p.bubble:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+p.speech:before {
+	left: 30px;
+	bottom: -41px;
+	border: 20px solid;
+	border-color: black transparent transparent black;
+}
+
+p.speech:after {
+	left: 38px;
+	bottom: -30px;
+	border: 15px solid;
+	border-color: #fff transparent transparent #fff;
+}
+
+
+
