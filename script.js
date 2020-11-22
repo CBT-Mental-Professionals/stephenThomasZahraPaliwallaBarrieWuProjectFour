@@ -21,15 +21,26 @@ cbtApp.answerKey = {
     ]
 }
 
-cbtApp.resultsToDisplay = {
-    bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
-    <p> You suck </p>`,
-    ok: `<img src="assets/barrie.png" alt="Barrie with a hesistant but friendly face">
-    <p> You ok </p>`,
-    good: `
-    <img src="assets/zahra.png" alt="Zahra with a friendly face">
-    <p> You good </p>`
+cbtApp.answerKeyIcons = {
+    "question1": [
+        '⭐️',
+        '⭐️⭐️',
+        '⭐️⭐️⭐️'
+    ],
+    "question2": [
+        '⭐️',
+        '⭐️⭐️',
+        '⭐️⭐️⭐️'
+    ],
+    "question3": [
+        '✅',
+        '❎'
+    ]
 }
+
+
+
+
 
 
 // make function to store radio responses in variables
@@ -48,8 +59,19 @@ cbtApp.getFormResponses = () => {
     console.log(`cbtApp.questionTwoValue is`, cbtApp.questionTwoValue);
     cbtApp.questionThreeValue = cbtApp.answerKey.question3[cbtApp.userQuestionThreeAnswer];
     console.log(`cbtApp.questionThreeValue is`, cbtApp.questionThreeValue);
+}
 
-    
+cbtApp.resultsToDisplay = {
+    bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
+    <p> You suck </p>
+    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>`,
+    ok: `<img src="assets/barrie.png" alt="Barrie with a hesistant but friendly face">
+    <p> You ok </p>
+    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>`,
+    good: `
+    <img src="assets/zahra.png" alt="Zahra with a friendly face">
+    <p> You good </p>
+    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>`
 }
 
 // testing out text area error handling
@@ -59,14 +81,14 @@ cbtApp.textAreaCounter = () => {
         let $textAreaNumber = $(this).val().length;
         console.log($textAreaNumber)
         if ($textAreaNumber === 10){
-            $('.errorMessage').text( `...keep typing`)
+            $('.errorMessaging').text( `...keep typing... 10 characters to go`)
         } else if ($textAreaNumber === 20){
-            $('.errorMessage').toggleClass('rotate')
+            $('.errorMessaging').toggleClass('rotate')
 
         } else if ($textAreaNumber === 25) {
-            $('.errorMessage').toggleClass('rotate')
+            $('.errorMessaging').toggleClass('rotate')
         } else if ($textAreaNumber === 30) {
-            $('.errorMessage').toggleClass('rotate')
+            $('.errorMessaging').toggleClass('rotate')
         }
     })
 }
@@ -80,17 +102,19 @@ cbtApp.addFormResponses = () => {
 } 
 
 cbtApp.numberToResult = () => {
+    
     $('.answer').empty();
-    if (cbtApp.addedFormResponses < -0.3){
+    if (cbtApp.addedFormResponses < -0.3) {
         let resultDisplay = `${cbtApp.resultsToDisplay.bad}`;
-        $('.answer').append(resultDisplay)
+        $('.answer').append(resultDisplay);
     } else if (cbtApp.addedFormResponses >= -0.3 && cbtApp.addedFormResponses <= 0.3) {
         let resultDisplay = `${cbtApp.resultsToDisplay.ok}`;
-        $('.answer').append(resultDisplay)
+        $('.answer').append(resultDisplay);
     } else {
         let resultDisplay = `${cbtApp.resultsToDisplay.good}`;
-        $('.answer').append(resultDisplay)
+        $('.answer').append(resultDisplay);
     };    
+    console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
     console.log(resultDisplay);
 } 
 
@@ -126,17 +150,33 @@ cbtApp.getResults = () => {
         e.preventDefault();
         // add up the radio button responses in conjunction with scores obj/arr
         cbtApp.getFormResponses();
+        console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
+
         // send textarea response to API
         cbtApp.sentimApiCall(cbtApp.userTextAreaAnswer);
         // combine radio data with textarea sentiment response
 
+
+        console.log(`cbtApp.answerKeyIcons is`, cbtApp.answerKeyIcons)
+        console.log(`cbtApp.answerKeyIcons.question1 is`, cbtApp.answerKeyIcons.question1)
+        console.log(`cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer] is`, cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer])
+        console.log(`[cbtApp.userQuestionOneAnswer] is`, cbtApp.userQuestionOneAnswer)
+
+
+       
+
         // display result(s) to (new) page
         $.when(cbtApp.sentimPromise)
             .then((res) => {
+                // expand results section
+                $('.results').show();
+
                 cbtApp.polarity = res.result.polarity;
                 console.log(`cbtApp.polarity at the bottom`, cbtApp.polarity);
                 cbtApp.addFormResponses();
                 cbtApp.numberToResult();
+                console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
+
             });
     });
 }
@@ -172,9 +212,7 @@ cbtApp.goDownToNextQuestion = () => {
         e.preventDefault();
         // animate the button TODO
         // $(this).transform
-        // expand results section (experimental)
-        // $('.results').css({ display: 'initial' }, 0);
-        $('.results').show();
+        
         // navigate down to results
         setTimeout(function () {
             $('html, body').animate({
