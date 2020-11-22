@@ -45,15 +45,15 @@ cbtApp.answerKeyIcons = {
 // obj w/ result properties to append to final results
 cbtApp.resultsToDisplay = {
     bad: `<img src="assets/stephen.png" alt="Stephen with a stern look on his face">
-    <p> You suck </p>
-    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>`,
+    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
+    <p> Stephen loves you! </p>`,
     ok: `<img src="assets/barrie.png" alt="Barrie with a hesistant but friendly face">
-    <p> You ok </p>
-    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>`,
+    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
+    <p> Thumbs up from Barrie! </p>`,
     good: `
     <img src="assets/zahra.png" alt="Zahra with a friendly face">
-    <p> You good </p>
-    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>`
+    <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
+    <p> Zahra's got your back! </p>`
 }
 
 
