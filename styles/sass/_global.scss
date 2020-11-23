@@ -49,9 +49,12 @@ fieldset {
     width: 85%;
 }
 
+/// results page styling
 .results {
+    text-align: center;
     height: 100vh;
     display: none;
+    margin-top: 75px;
     a {
         color: black;
     }
@@ -66,7 +69,15 @@ fieldset {
     }
 }
 
+.permaAnswer ul{
+    list-style-type: none;
+    padding-left: 0px;
+    text-decoration: underline;
+}
 
+.permaAnswer a {
+    text-decoration: none;
+}
 
 .questionSection2,
 .questionSection3,
@@ -102,23 +113,6 @@ main{
         background: lightgrey;
     }
 
-}
-
-
-/// results page styling
-
-.results{
-    text-align: center;
-}
-
-.permaAnswer ul{
-    list-style-type: none;
-    padding-left: 0px;
-    text-decoration: underline;
-}
-
-.permaAnswer a {
-    text-decoration: none;
 }
 
 // skins button style

@@ -282,8 +282,10 @@ fieldset {
 }
 
 .results {
+  text-align: center;
   height: 100vh;
   display: none;
+  margin-top: 75px;
 }
 
 .results a {
@@ -300,6 +302,16 @@ fieldset {
 
 .results .permaAnswer p {
   margin: 15px 0;
+}
+
+.permaAnswer ul {
+  list-style-type: none;
+  padding-left: 0px;
+  text-decoration: underline;
+}
+
+.permaAnswer a {
+  text-decoration: none;
 }
 
 .questionSection2,
@@ -343,20 +355,6 @@ main li:focus {
 
 main .selectedMode {
   background: lightgrey;
-}
-
-.results {
-  text-align: center;
-}
-
-.permaAnswer ul {
-  list-style-type: none;
-  padding-left: 0px;
-  text-decoration: underline;
-}
-
-.permaAnswer a {
-  text-decoration: none;
 }
 
 .skinChanger {
