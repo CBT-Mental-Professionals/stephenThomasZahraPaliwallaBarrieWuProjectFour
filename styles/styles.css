@@ -310,7 +310,7 @@ fieldset {
   place-items: center;
 }
 
-main ul {
+main .skinStyle {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,7 +321,7 @@ main ul {
   padding-left: 0px;
 }
 
-main li {
+main .skinListItem {
   border: 3px solid black;
   padding: 10px 20px;
   text-align: center;
@@ -352,6 +352,11 @@ main .selectedMode {
 .permaAnswer ul {
   list-style-type: none;
   padding-left: 0px;
+  text-decoration: underline;
+}
+
+.permaAnswer a {
+  text-decoration: none;
 }
 
 header {
@@ -543,6 +548,7 @@ textarea {
 }
 
 button, .startAgainButton {
+  cursor: pointer;
   font-size: 1.8rem;
   margin: 10px;
   padding: 10px;
@@ -553,21 +559,42 @@ button, .startAgainButton {
   position: relative;
 }
 
+.skinSelect {
+  cursor: pointer;
+}
+
 button:hover,
-button:focus {
+button:focus,
+.startAgainButton:hover,
+.startAgainButton:focus,
+.skinSelect:hover,
+.skinSelect:focus {
   background: black;
   color: white;
 }
 
-button:active {
+button:hover a,
+button:focus a,
+.startAgainButton:hover a,
+.startAgainButton:focus a,
+.skinSelect:hover a,
+.skinSelect:focus a {
+  color: white;
+}
+
+button:active,
+.startAgainButton:active,
+.skinSelect:active {
   top: 3px;
   left: 3px;
   -webkit-box-shadow: 3px 3px white;
           box-shadow: 3px 3px white;
 }
 
-.finalForm p {
-  margin-bottom: 15px;
+button:active a,
+.startAgainButton:active a,
+.skinSelect:active a {
+  color: white;
 }
 
 .errorMessaging {
@@ -667,7 +694,20 @@ p.speech:after {
 }
 
 @media only screen and (min-width: 600px) {
-  h1 {
-    font-size: 8rem;
+  #header > h1:nth-child(2) {
+    font-size: 7rem;
+  }
+  section.questionSection:nth-child(1) > h2:nth-child(1) {
+    font-size: 4.5rem;
+  }
+  .wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 85%;
+  }
+  fieldset {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }

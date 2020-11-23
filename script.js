@@ -211,6 +211,9 @@ cbtApp.skinListener = () => {
             $(i).text(cbtApp.textToDisplay[i][cbtApp.skin]);
         }
         console.log(cbtApp.skin);
+        console.log(cbtApp.skin);
+        $('.skinSelect').removeClass('selectedMode');
+        $(this).addClass('selectedMode');
         
     })
 }

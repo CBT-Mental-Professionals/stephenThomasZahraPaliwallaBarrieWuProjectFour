@@ -42,9 +42,6 @@ label {
 
 input:focus + label{
     border-right: 3px solid blue;
-    // box-shadow: 3px 3px white, 6px 6px blue;
-
-
 }
 
 label::before {
@@ -102,30 +99,39 @@ textarea {
 }
 
 button , .startAgainButton{
+    cursor: pointer; 
     font-size: 1.8rem;
     margin: 10px;
     padding: 10px;
     background-color: white;
     border: 3px solid black;
     box-shadow: 3px 3px white, 6px 6px black;
-    position: relative;
-    
+    position: relative;  
 }
-
+.skinSelect {
+    cursor: pointer;
+}
 button:hover,
-button:focus {
+button:focus, 
+.startAgainButton:hover,
+.startAgainButton:focus, 
+.skinSelect:hover,
+.skinSelect:focus {
     background: black;
     color: white;
+    a {
+        color: white;
+    }
 }
-
-button:active {
+button:active,
+.startAgainButton:active,
+.skinSelect:active {
     top: 3px;
     left: 3px;
     box-shadow: 3px 3px white;
-}
-
-.finalForm p {
-    margin-bottom: 15px;
+    a{
+        color: white;
+    }
 }
 
 .errorMessaging{ 
