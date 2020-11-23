@@ -120,7 +120,16 @@ main{
 .permaAnswer a {
     text-decoration: none;
 }
+
+// skins button style
 .skinChanger {
     display: flex;
     flex-wrap: wrap;
+}
+
+.vibe {
+    background-color: black;
+    color: white;
+    padding: 0 5px;
+    border-radius: 10px;
 }

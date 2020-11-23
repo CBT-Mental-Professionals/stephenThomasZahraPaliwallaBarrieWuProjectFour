@@ -367,6 +367,13 @@ main .selectedMode {
       flex-wrap: wrap;
 }
 
+.vibe {
+  background-color: black;
+  color: white;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -493,7 +500,7 @@ fieldset {
 label {
   position: relative;
   font-size: 2.3rem;
-  padding: 20px 0;
+  padding: 20px 10px 20px 0;
   padding-left: 45px;
   cursor: pointer;
 }
@@ -652,53 +659,6 @@ p.speech:after {
   bottom: -30px;
   border: 15px solid;
   border-color: #fff transparent transparent #fff;
-}
-
-.puffIn {
-  -webkit-animation-name: puffIn;
-          animation-name: puffIn;
-}
-
-@-webkit-keyframes puffIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
-    -webkit-filter: blur(2px);
-            filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-  }
-}
-
-@keyframes puffIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
-    -webkit-filter: blur(2px);
-            filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-  }
 }
 
 @media only screen and (min-width: 600px) {
