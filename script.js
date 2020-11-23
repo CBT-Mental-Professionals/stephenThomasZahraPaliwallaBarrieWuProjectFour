@@ -240,11 +240,11 @@ cbtApp.getFormResponses = () => {
 cbtApp.textAreaCounter = () => {
     $('textarea').bind('input propertychange', function () {
         let $textAreaNumber = $(this).val().length;
-        if ($textAreaNumber === 10){
+        if ($textAreaNumber >= 10){
             $('.errorMessaging').text( `...keep typing... 20 characters to go`)
-        } else if ($textAreaNumber === 20){
+        } else if ($textAreaNumber >= 20){
             $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 10 characters to go`)
-        } else if ($textAreaNumber === 25) {
+        } else if ($textAreaNumber >= 25) {
             $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 5 characters to go`)
         } else if ($textAreaNumber >= 30) {
             $('.errorMessaging').toggleClass('rotate').text(`...you did it!`)
