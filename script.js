@@ -246,7 +246,7 @@ cbtApp.textAreaCounter = () => {
             $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 10 characters to go`)
         } else if ($textAreaNumber === 25) {
             $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 5 characters to go`)
-        } else if ($textAreaNumber === 30) {
+        } else if ($textAreaNumber >= 30) {
             $('.errorMessaging').toggleClass('rotate').text(`...you did it!`)
         }
     })
