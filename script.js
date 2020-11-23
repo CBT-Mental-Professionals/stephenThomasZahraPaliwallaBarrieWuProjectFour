@@ -211,7 +211,8 @@ cbtApp.skinListener = () => {
             $(i).text(cbtApp.textToDisplay[i][cbtApp.skin]);
         }
         console.log(cbtApp.skin);
-        
+        $('.skinSelect').removeClass('selectedMode');
+        $(this).addClass('selectedMode');
     })
 }
 
@@ -260,7 +261,7 @@ cbtApp.textAreaCounter = () => {
 
 cbtApp.goDownToNextQuestion = () => {
     // listen to radio buttons being selected
-    $('.questionOneAnswer').on('click', function () {
+    $('.questionOneAnswer').click(function () {
         setTimeout(function () {
             console.log(`something has been checked`);
             $('html, body').animate({
