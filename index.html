@@ -28,9 +28,11 @@
     <main>
 
         <ul class="skinChanger wrapper">
-            <li class="skinSelect" value="0">Barrie Mode</li>
-            <li class="skinSelect" value="1">Zahra Mode</li>
-            <li class="skinSelect" value="2">Stephen Mode</li>
+            <li class="skinSelect selectedMode" tabindex=" 1" value="3">Harsh Mode</li>
+            <li class="skinSelect" value="0" tabindex="2">Friendly Mode</li>
+            <li class="skinSelect" value="1" tabindex="3">Bro Mode</li>
+            <li class="skinSelect" value="2" tabindex="4">Pirate Mode</li>
+            
         </ul>
 
         <div class="wrapper">
@@ -40,31 +42,31 @@
                     <h2>Answer questions. Get some answers.</h2>
                     <fieldset class="question question1">
                         <legend class="legendOne">do you fucking sleep?</legend>
-                        <input type="radio" name="questionOneAnswer" value="0" id="questionOneAnswerOne" class="srOnly questionOneAnswer" required>
+                        <input type="radio" name="questionOneAnswer" value="0" id="questionOneAnswerOne" class="srOnly questionOneAnswer" tabindex="5" required>
                         <label class="questionOneAnswerOne" for="questionOneAnswerOne">What the fuck is sleep?</label>
-                        <input type="radio" name="questionOneAnswer" value="1" id="questionOneAnswerTwo" class="srOnly questionOneAnswer">
+                        <input type="radio" name="questionOneAnswer" value="1" id="questionOneAnswerTwo" class="srOnly questionOneAnswer" tabindex="6">
                         <label class="questionOneAnswerTwo" for="questionOneAnswerTwo">3-6 hours</label>
-                        <input type="radio" name="questionOneAnswer" value="2" id="questionOneAnswerThree" class="srOnly questionOneAnswer">
+                        <input type="radio" name="questionOneAnswer" value="2" id="questionOneAnswerThree" class="srOnly questionOneAnswer" tabindex="7">
                         <label class="questionOneAnswerThree" for="questionOneAnswerThree">6-9 hours</label>
                     </fieldset>
                 </section>
                 <section class="questionSection questionSection2">
                     <fieldset class="question question2">
                         <legend class="legendTwo">How many fucking meals have you had today?</legend>
-                        <input type="radio" name="questionTwoAnswer" value="0" id="questionTwoAnswerOne" class="srOnly questionTwoAnswer" required>
+                        <input type="radio" name="questionTwoAnswer" value="0" id="questionTwoAnswerOne" class="srOnly questionTwoAnswer" required tabindex="8">
                         <label class="questionTwoAnswerOne" for="questionTwoAnswerOne">Who has time to eat?</label>
-                        <input type="radio" name="questionTwoAnswer" value="1" id="questionTwoAnswerTwo" class="srOnly questionTwoAnswer">
+                        <input type="radio" name="questionTwoAnswer" value="1" id="questionTwoAnswerTwo" class="srOnly questionTwoAnswer" tabindex="9">
                         <label class="questionTwoAnswerTwo" for="questionTwoAnswerTwo">1 - 2 meals</label>
-                        <input type="radio" name="questionTwoAnswer" value="2" id="questionTwoAnswerThree" class="srOnly questionTwoAnswer">
+                        <input type="radio" name="questionTwoAnswer" value="2" id="questionTwoAnswerThree" class="srOnly questionTwoAnswer" tabindex="10">
                         <label class="questionTwoAnswerThree" for="questionTwoAnswerThree">3+ meals</label>
                     </fieldset>
                 </section>
                 <section class="questionSection questionSection3">
                     <fieldset class="question question3" >
                         <legend class="legendThree">Have you been active today?</legend>
-                        <input type="radio" name="questionThreeAnswer" value="0" id="questionThreeAnswerOne" class="srOnly questionThreeAnswer" required>
+                        <input type="radio" name="questionThreeAnswer" value="0" id="questionThreeAnswerOne" class="srOnly questionThreeAnswer" required tabindex="11">
                         <label class="questionThreeAnswerOne" for="questionThreeAnswerOne">Yes</label>
-                        <input type="radio" name="questionThreeAnswer" value="1" id="questionThreeAnswerTwo" class="srOnly questionThreeAnswer">
+                        <input type="radio" name="questionThreeAnswer" value="1" id="questionThreeAnswerTwo" class="srOnly questionThreeAnswer" tabindex="12">
                         <label class="questionThreeAnswerTwo" for="questionThreeAnswerTwo">ALL I DO IS CODE</label>
                     </fieldset>
                 </section>
@@ -77,7 +79,9 @@
                         <p class="bubble speech errorMessaging">please type a minimum of 30 characters</p>
                         
                         <textarea name="textAreaAnswer" id="" cols="30" rows="10" placeholder="additional comments for your day" minlength="30" required></textarea>
-                        <button type="submit">Fix me</button>
+                        <div class="submitButton">
+                        <button tabindex="13" type="submit">Fix me</button>
+                        </div>
                     </div>
                 </section>
 

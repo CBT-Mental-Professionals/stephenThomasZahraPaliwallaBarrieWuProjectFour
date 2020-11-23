@@ -74,6 +74,36 @@ fieldset {
     display: grid;
     place-items: center;
 }
+main{
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        padding-left: 0px;
+
+    }
+    li{
+        border: 3px solid black;
+        padding: 10px 20px;
+        text-align: center;
+        margin: 10px;
+        font-size: 1.8rem;
+        margin: 10px;
+        padding: 10px;
+        background-color: white;
+        border: 3px solid black;
+        box-shadow: 3px 3px white, 6px 6px black;
+        position: relative;
+    }
+    li:focus{
+        box-shadow: 3px 3px white, 6px 6px blue;
+    }
+    .selectedMode{
+        background: lightgrey;
+    }
+
+}
+
 
 /// results page styling
 

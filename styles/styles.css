@@ -310,6 +310,41 @@ fieldset {
   place-items: center;
 }
 
+main ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-left: 0px;
+}
+
+main li {
+  border: 3px solid black;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 10px;
+  font-size: 1.8rem;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 3px solid black;
+  -webkit-box-shadow: 3px 3px white, 6px 6px black;
+          box-shadow: 3px 3px white, 6px 6px black;
+  position: relative;
+}
+
+main li:focus {
+  -webkit-box-shadow: 3px 3px white, 6px 6px blue;
+          box-shadow: 3px 3px white, 6px 6px blue;
+}
+
+main .selectedMode {
+  background: lightgrey;
+}
+
 .results {
   text-align: center;
 }
@@ -404,8 +439,21 @@ form textarea {
   margin: 20px auto;
 }
 
-form h2, form legend {
+form h2, form legend, form p, form button {
   text-align: center;
+}
+
+form .submitButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 fieldset.question legend {
@@ -438,7 +486,7 @@ label {
 }
 
 input:focus + label {
-  border: 1px solid black;
+  border-right: 3px solid blue;
 }
 
 label::before {
