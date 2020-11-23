@@ -1,5 +1,17 @@
 @media only screen and (min-width: 600px) {
-  h1{
-      font-size: 8rem;
-  }
+  #header > h1:nth-child(2) {
+ font-size: 7rem;
+}
+section.questionSection:nth-child(1) > h2:nth-child(1) {
+ font-size: 4.5rem;
+}
+.wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 85%;
+}
+fieldset{
+  align-items: center;
+}
+
 }

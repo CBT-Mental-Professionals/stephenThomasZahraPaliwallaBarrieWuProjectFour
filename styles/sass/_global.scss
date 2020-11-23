@@ -75,14 +75,14 @@ fieldset {
     place-items: center;
 }
 main{
-    ul {
+    .skinStyle{
         list-style: none;
         display: flex;
         justify-content: space-evenly;
         padding-left: 0px;
 
     }
-    li{
+    .skinListItem{
         border: 3px solid black;
         padding: 10px 20px;
         text-align: center;
@@ -114,5 +114,22 @@ main{
 .permaAnswer ul{
     list-style-type: none;
     padding-left: 0px;
+    text-decoration: underline;
 }
 
+.permaAnswer a {
+    text-decoration: none;
+}
+
+// skins button style
+.skinChanger {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vibe {
+    background-color: black;
+    color: white;
+    padding: 0 5px;
+    border-radius: 10px;
+}

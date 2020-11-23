@@ -310,7 +310,7 @@ fieldset {
   place-items: center;
 }
 
-main ul {
+main .skinStyle {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,7 +321,7 @@ main ul {
   padding-left: 0px;
 }
 
-main li {
+main .skinListItem {
   border: 3px solid black;
   padding: 10px 20px;
   text-align: center;
@@ -352,6 +352,26 @@ main .selectedMode {
 .permaAnswer ul {
   list-style-type: none;
   padding-left: 0px;
+  text-decoration: underline;
+}
+
+.permaAnswer a {
+  text-decoration: none;
+}
+
+.skinChanger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.vibe {
+  background-color: black;
+  color: white;
+  padding: 0 5px;
+  border-radius: 10px;
 }
 
 header {
@@ -480,7 +500,7 @@ fieldset {
 label {
   position: relative;
   font-size: 2.3rem;
-  padding: 20px 0;
+  padding: 20px 10px 20px 0;
   padding-left: 45px;
   cursor: pointer;
 }
@@ -543,6 +563,7 @@ textarea {
 }
 
 button, .startAgainButton {
+  cursor: pointer;
   font-size: 1.8rem;
   margin: 10px;
   padding: 10px;
@@ -553,21 +574,42 @@ button, .startAgainButton {
   position: relative;
 }
 
+.skinSelect {
+  cursor: pointer;
+}
+
 button:hover,
-button:focus {
+button:focus,
+.startAgainButton:hover,
+.startAgainButton:focus,
+.skinSelect:hover,
+.skinSelect:focus {
   background: black;
   color: white;
 }
 
-button:active {
+button:hover a,
+button:focus a,
+.startAgainButton:hover a,
+.startAgainButton:focus a,
+.skinSelect:hover a,
+.skinSelect:focus a {
+  color: white;
+}
+
+button:active,
+.startAgainButton:active,
+.skinSelect:active {
   top: 3px;
   left: 3px;
   -webkit-box-shadow: 3px 3px white;
           box-shadow: 3px 3px white;
 }
 
-.finalForm p {
-  margin-bottom: 15px;
+button:active a,
+.startAgainButton:active a,
+.skinSelect:active a {
+  color: white;
 }
 
 .errorMessaging {
@@ -619,55 +661,21 @@ p.speech:after {
   border-color: #fff transparent transparent #fff;
 }
 
-.puffIn {
-  -webkit-animation-name: puffIn;
-          animation-name: puffIn;
-}
-
-@-webkit-keyframes puffIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
-    -webkit-filter: blur(2px);
-            filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-  }
-}
-
-@keyframes puffIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
-    -webkit-filter: blur(2px);
-            filter: blur(2px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-  }
-}
-
 @media only screen and (min-width: 600px) {
-  h1 {
-    font-size: 8rem;
+  #header > h1:nth-child(2) {
+    font-size: 7rem;
+  }
+  section.questionSection:nth-child(1) > h2:nth-child(1) {
+    font-size: 4.5rem;
+  }
+  .wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 85%;
+  }
+  fieldset {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }

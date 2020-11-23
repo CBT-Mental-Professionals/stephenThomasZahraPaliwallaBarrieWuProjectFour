@@ -111,7 +111,7 @@ cbtApp.textToDisplay = {
         'Please answer the questions below, Friends! ',
         'Answer the questions below, bro',
         'Arr..',
-        'answer some questions. get some answers.'
+        'answer questions. get some answers.'
     ],
     // question one 
     '.legendOne': [
@@ -210,8 +210,8 @@ cbtApp.skinListener = () => {
         for (i in cbtApp.textToDisplay) {
             $(i).text(cbtApp.textToDisplay[i][cbtApp.skin]);
         }
-        console.log(cbtApp.skin);
-        
+        $('.skinSelect').removeClass('selectedMode');
+        $(this).addClass('selectedMode');
     })
 }
 
@@ -225,18 +225,13 @@ cbtApp.getFormResponses = () => {
     cbtApp.userQuestionOneAnswer = $('input[name=questionOneAnswer]:checked').val();
     cbtApp.userQuestionTwoAnswer = $('input[name=questionTwoAnswer]:checked').val();
     cbtApp.userQuestionThreeAnswer = $('input[name=questionThreeAnswer]:checked').val();
-    console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
     // store text area data
     cbtApp.userTextAreaAnswer = $('textarea').val();
-    console.log(cbtApp.userTextAreaAnswer);
 
     // translate value="(0, 1, or 2") to cbt.answerKey score array [-1, 0, 1]
     cbtApp.questionOneValue = cbtApp.answerKey.question1[cbtApp.userQuestionOneAnswer];
-    console.log(`cbtApp.questionOneValue is`, cbtApp.questionOneValue);
     cbtApp.questionTwoValue = cbtApp.answerKey.question2[cbtApp.userQuestionTwoAnswer];
-    console.log(`cbtApp.questionTwoValue is`, cbtApp.questionTwoValue);
     cbtApp.questionThreeValue = cbtApp.answerKey.question3[cbtApp.userQuestionThreeAnswer];
-    console.log(`cbtApp.questionThreeValue is`, cbtApp.questionThreeValue);
 }
 
 
@@ -245,14 +240,13 @@ cbtApp.getFormResponses = () => {
 cbtApp.textAreaCounter = () => {
     $('textarea').bind('input propertychange', function () {
         let $textAreaNumber = $(this).val().length;
-        console.log($textAreaNumber)
-        if ($textAreaNumber === 10){
+        if ($textAreaNumber >= 10){
             $('.errorMessaging').text( `...keep typing... 20 characters to go`)
-        } else if ($textAreaNumber === 20){
+        } else if ($textAreaNumber >= 20){
             $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 10 characters to go`)
-        } else if ($textAreaNumber === 25) {
+        } else if ($textAreaNumber >= 25) {
             $('.errorMessaging').toggleClass('rotate').text(`...keep typing... 5 characters to go`)
-        } else if ($textAreaNumber === 30) {
+        } else if ($textAreaNumber >= 30) {
             $('.errorMessaging').toggleClass('rotate').text(`...you did it!`)
         }
     })
@@ -262,7 +256,6 @@ cbtApp.goDownToNextQuestion = () => {
     // listen to radio buttons being selected
     $('.questionOneAnswer').on('click', function () {
         setTimeout(function () {
-            console.log(`something has been checked`);
             $('html, body').animate({
                 scrollTop: $(".questionSection2").offset().top
             }, 400);
@@ -270,7 +263,6 @@ cbtApp.goDownToNextQuestion = () => {
     });
     $('.questionTwoAnswer').click(function () {
         setTimeout(function () {
-            console.log(`something has been checked`);
             $('html, body').animate({
                 scrollTop: $(".questionSection3").offset().top
             }, 400);
@@ -278,7 +270,6 @@ cbtApp.goDownToNextQuestion = () => {
     });
     $('.questionThreeAnswer').click(function () {
         setTimeout(function () {
-            console.log(`something has been checked`);
             $('html, body').animate({
                 scrollTop: $(".questionSection4").offset().top
             }, 400);
@@ -308,18 +299,11 @@ cbtApp.sentimApiCall = (textAreaInput) => {
                 "Content-Type": "application/json"  
         }
     });
-    
-    // console.log(`testing this has worked`);
-    // console.log(cbtApp.sentimPromise);
-    // return cbtApp.sentimPromise;
-    // return cbtApp.polarity;
-    // console.log(`2nd cbtApp.polarity log outside all the API functions`, cbtApp.polarity);
 }
 
 // add user choice radio values with sentimApi return value from  textarea
 cbtApp.addFormResponses = () => {
     cbtApp.addedFormResponses = (cbtApp.questionOneValue + cbtApp.questionTwoValue + cbtApp.questionThreeValue + cbtApp.polarity) / 4;
-    console.log(cbtApp.addedFormResponses)
 } 
 
 cbtApp.getResults = () => {
@@ -328,34 +312,10 @@ cbtApp.getResults = () => {
         e.preventDefault();
         // add up the radio button responses in conjunction with scores obj/arr
         cbtApp.getFormResponses();
-        console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
-        
         // send textarea response to API
         cbtApp.sentimApiCall(cbtApp.userTextAreaAnswer);
         // combine radio data with textarea sentiment response
-        
-        
-        console.log(`cbtApp.answerKeyIcons is`, cbtApp.answerKeyIcons)
-        console.log(`cbtApp.answerKeyIcons.question1 is`, cbtApp.answerKeyIcons.question1[0])
-        console.log(`cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer] is`, cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer])
-        console.log(`[cbtApp.userQuestionOneAnswer] is`, cbtApp.userQuestionOneAnswer)
-        
         cbtApp.stuffThatHappensWhenApiComesBack();
-
-
-        // Object within the 'sumbit' function
-        cbtApp.resultsToDisplay = {
-            bad: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].badImage}" alt="Stephen with a stern look on his face">
-            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-            <p> ${cbtApp.htmlData[cbtApp.skin].badMessage} </p>`, 
-            ok: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].okImage}" alt="Barrie with a hesistant but friendly face">
-            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-            <p> ${cbtApp.htmlData[cbtApp.skin].okMessage} </p>`,
-            good: `
-            <img src="assets/${cbtApp.htmlData[cbtApp.skin].goodImage}" alt="Zahra with a friendly face">
-            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}</p>
-            <p>  ${cbtApp.htmlData[cbtApp.skin].goodMessage} </p>`
-        }
     });
 }
 // Stephen loves you!  Thumbs up from Barrie!  Zahra's got your back!
@@ -368,7 +328,6 @@ cbtApp.scrollToResultsOnFormSubmit = () => {
         e.preventDefault();
         // animate the button TODO
         // $(this).transform
-
         // navigate down to results
         setTimeout(function () {
             $('html, body').animate({
@@ -390,14 +349,24 @@ cbtApp.stuffThatHappensWhenApiComesBack = () => {
                 scrollTop: $(".results").offset().top
             }, 400);
         }, 300);
-        
         cbtApp.polarity = res.result.polarity;
-        console.log(`cbtApp.polarity at the bottom`, cbtApp.polarity);
         cbtApp.addFormResponses();
+        // Object within the 'sumbit' function
+        cbtApp.resultsToDisplay = {
+            bad: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].badImage}" alt="Stephen with a stern look on his face">
+            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]} <br> Textual vibe: <span class="vibe">${cbtApp.polarity}</span></p>
+            <p> ${cbtApp.htmlData[cbtApp.skin].badMessage} </p>`,
+            ok: `<img src="assets/${cbtApp.htmlData[cbtApp.skin].okImage}" alt="Barrie with a hesistant but friendly face">
+            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}<br> Textual vibe: <span class="vibe">${cbtApp.polarity}</span></p>
+            <p> ${cbtApp.htmlData[cbtApp.skin].okMessage} </p>`,
+            good: `
+            <img src="assets/${cbtApp.htmlData[cbtApp.skin].goodImage}" alt="Zahra with a friendly face">
+            <p> Sleep: ${cbtApp.answerKeyIcons.question1[cbtApp.userQuestionOneAnswer]} <br> Meals: ${cbtApp.answerKeyIcons.question2[cbtApp.userQuestionTwoAnswer]} <br> Activity: ${cbtApp.answerKeyIcons.question3[cbtApp.userQuestionThreeAnswer]}<br> Textual vibe: <span class="vibe">${cbtApp.polarity}</span></p>
+            <p>  ${cbtApp.htmlData[cbtApp.skin].goodMessage} </p>`
+        }
         // display result(s) to (new) page
         cbtApp.displayResponseResultsToThePage();
 
-        console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer);
     });
 }
 
@@ -414,8 +383,6 @@ cbtApp.displayResponseResultsToThePage = () => {
         let resultDisplay = `${cbtApp.resultsToDisplay.good}`;
         $('.answer').append(resultDisplay);
     };    
-    console.log(cbtApp.userQuestionOneAnswer, cbtApp.userQuestionTwoAnswer, cbtApp.userQuestionThreeAnswer); 
-    console.log(resultDisplay);
 } 
 
 
