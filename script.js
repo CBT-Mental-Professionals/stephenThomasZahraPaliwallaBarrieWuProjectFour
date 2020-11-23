@@ -111,7 +111,7 @@ cbtApp.textToDisplay = {
         'Please answer the questions below, Friends! ',
         'Answer the questions below, bro',
         'Arr..',
-        'answer some questions. get some answers.'
+        'answer questions. get some answers.'
     ],
     // question one 
     '.legendOne': [
